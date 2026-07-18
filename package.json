@@ -8,5 +8,10 @@
   "scripts": {
     "mobile": "npm run --workspace=apps/mobile start",
     "backend": "npm run --workspace=apps/backend dev"
+  },
+  "devDependencies": {
+    "expo": "~54.0.0",
+    "react": "^19.1.0",
+    "react-native": "^0.81.5"
   }
 }
