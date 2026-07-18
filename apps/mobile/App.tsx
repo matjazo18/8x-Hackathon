@@ -1,24 +1,4 @@
 import { StatusBar } from 'expo-status-bar';
-<<<<<<< Updated upstream
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-=======
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Image, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
@@ -31,6 +11,10 @@ const sprites = {
   jonathan: require('./assets/jonathan.png'),
   johnny: require('./assets/johnny-joestar.png'),
   jodio: require('./assets/jodio.png'),
+  pikachu: require('./assets/pikachu.png'),
+  aang: require('./assets/aang.png'),
+  friday: require('./assets/friday.png'),
+  midudev: require('./assets/midudev.png'),
 };
 const skillSprites = {
   joseph: require('./assets/joseph.png'),
@@ -54,6 +38,8 @@ const agentRows: SpriteName[][] = [
   ['giorno', 'jolyne'],
   ['gappy', 'jonathan'],
   ['johnny', 'jodio'],
+  ['pikachu', 'aang'],
+  ['friday', 'midudev'],
 ];
 const skillRows: SkillName[][] = [
   ['joseph', 'josuke4'],
@@ -64,6 +50,7 @@ const skillRows: SkillName[][] = [
 const agentNames: Record<SpriteName, string> = {
   jotaro: 'Jotaro', dio: 'Dio', giorno: 'Giorno', jolyne: 'Jolyne',
   gappy: 'Gappy', jonathan: 'Jonathan', johnny: 'Johnny', jodio: 'Jodio',
+  pikachu: 'Pikachu', aang: 'Aang', friday: 'Friday', midudev: 'midudev',
 };
 const skillNames: Record<SkillName, string> = {
   joseph: 'Joseph', josuke4: 'Josuke', goku: 'Goku', kurisu: 'Kurisu',
@@ -169,7 +156,7 @@ export default function App() {
         <Text style={styles.fieldLabel}>NAME</Text>
         <TextInput value={itemName} onChangeText={setItemName} placeholder={isAgent ? 'e.g. Research assistant' : 'e.g. Web research'} placeholderTextColor="#9d9d9d" style={styles.creatorInput} />
         <Text style={styles.fieldLabel}>WHAT SHOULD IT DO?</Text>
-        <TextInput value={itemDescription} onChangeText={setItemDescription} multiline textAlignVertical="top" placeholder={isAgent ? 'Describe the agent’s job...' : 'Describe what this skill does...'} placeholderTextColor="#9d9d9d" style={[styles.creatorInput, styles.creatorDescription]} />
+        <TextInput value={itemDescription} onChangeText={setItemDescription} multiline textAlignVertical="top" placeholder={isAgent ? "Describe the agent’s job..." : ‘Describe what this skill does...’} placeholderTextColor="#9d9d9d" style={[styles.creatorInput, styles.creatorDescription]} />
         <Text style={styles.fieldLabel}>CHARACTER</Text>
         <View style={styles.characterPicker}>
           {characterChoices.map((sprite) => <Pressable key={sprite} onPress={() => setCreatorSprite(sprite)} style={[styles.characterOption, creatorSprite === sprite && styles.characterOptionSelected]}>
@@ -328,5 +315,4 @@ const styles = StyleSheet.create({
   timeline: { marginTop: 8, borderRadius: 12, borderWidth: 1, borderColor: '#d7d6d2', backgroundColor: '#fffefa', paddingVertical: 15, paddingRight: 9 },
   timelineStep: { minHeight: 101, flexDirection: 'row' }, timelineRail: { width: 24, alignItems: 'center', paddingTop: 6 }, timelineDot: { height: 11, width: 11, borderRadius: 6, borderWidth: 1 }, timelineLine: { position: 'absolute', top: 17, height: 93, width: 1, backgroundColor: '#c9c9c7' }, stepSprite: { height: 58, width: 58, marginTop: 2 }, stepCopy: { paddingTop: 6, flex: 1, minWidth: 0 }, stepTitleRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 3 }, stepTitle: { color: '#292929', fontSize: 12, fontWeight: '800', flexShrink: 1 }, time: { color: '#909090', fontSize: 9 }, stepDescription: { color: '#696969', fontSize: 10, lineHeight: 14, marginTop: 6, maxWidth: 145 }, progressTrack: { height: 12, overflow: 'hidden', borderRadius: 6, borderWidth: 1, borderColor: '#d2d2cf', marginTop: 8, backgroundColor: '#f8f7f3' }, progressFill: { height: '100%', borderRadius: 4 },
   messageBar: { position: 'absolute', bottom: 12, left: 30, right: 30, minHeight: 50, borderRadius: 25, borderWidth: 1, borderColor: '#bdbdb9', backgroundColor: '#fffefa', paddingLeft: 14, paddingRight: 5, alignItems: 'center', flexDirection: 'row', gap: 5 }, messageInput: { flex: 1, minWidth: 0, fontSize: 12, color: '#333' },
->>>>>>> Stashed changes
 });
