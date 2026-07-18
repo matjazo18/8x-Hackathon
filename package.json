@@ -1,0 +1,12 @@
+{
+  "name": "8x-hackathon",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "mobile": "npm run --workspace=apps/mobile start",
+    "backend": "npm run --workspace=apps/backend dev"
+  }
+}
