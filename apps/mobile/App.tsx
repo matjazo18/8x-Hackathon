@@ -328,6 +328,13 @@ export default function App() {
           </View>)}
         </>
         : <>
+          <View style={styles.galleryRow}>
+            <Pressable onPress={() => toggleAgent('jotaro')} style={[styles.agentTile, selected.includes('jotaro') && styles.agentTileSelected]}>
+              <AnimatedAgentSprite name="jotaro" />
+              <Text style={styles.tileLabel} numberOfLines={1}>Jotaro</Text>
+              <View style={styles.jotaroSkillBadge}><Text style={styles.jotaroSkillBadgeText}>SIOL SKILL</Text></View>
+            </Pressable>
+          </View>
           {skillRows.map((row, rowIndex) => <View key={rowIndex} style={styles.galleryRow}>
           {row.map((skill) => <View key={skill} style={styles.agentTile}>
             <AnimatedSkillSprite name={skill} />
