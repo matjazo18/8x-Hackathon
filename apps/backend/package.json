@@ -8,6 +8,7 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
+    "@8x/shared-types": "0.1.0",
     "express": "^4.19.2"
   },
   "devDependencies": {

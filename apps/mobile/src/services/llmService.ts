@@ -12,6 +12,8 @@ export interface LLMService {
   unloadModel(): Promise<void>;
 }
 
+export const MODEL_ID = 'qwen3-1.7b-mlx-4bit';
+
 // Placeholder — replace with real MLC LLM implementation after installing the native module
 class MockLLMService implements LLMService {
   async loadModel(_modelId: string): Promise<void> {
@@ -27,3 +29,5 @@ class MockLLMService implements LLMService {
 }
 
 export const llmService: LLMService = new MockLLMService();
+
+// Native hook: mlx-swift-lm bo kasneje implementiral isti vmesnik prek Expo/Turbo modula.
